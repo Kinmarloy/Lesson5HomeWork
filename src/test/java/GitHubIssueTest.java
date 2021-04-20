@@ -1,5 +1,7 @@
 import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.*;
+import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Tags;
@@ -28,7 +30,7 @@ public class GitHubIssueTest {
     @DisplayName("Поиск Issue по номеру в репозитории")
 
     public  void testIssueSearch (){
-        //SelenideLogger.addListener("allure", new AllureSelenide());
+        SelenideLogger.addListener("allure", new AllureSelenide());
 
         open(BASE_URL);
         $x("//input[contains(@class,'header-search-input')]").click();
